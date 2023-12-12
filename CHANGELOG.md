@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.0.135 (2023-12-11)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.134...v0.0.135
+
+## 0.0.134 (2023-12-11)
+
+## What's Changed
+* feat: add custom rag first abstraction layer by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1858
+* feat(payment): added modal of right size by @StanGirard in https://github.com/StanGirard/quivr/pull/1860
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.133...v0.0.134
+
+## 0.0.133 (2023-12-11)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.132...v0.0.133
+
+## 0.0.132 (2023-12-10)
+
+## What's Changed
+* feat: add generate_answer function to support non streamed response for api brain by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1847
+* fix(ollama): - update supabase-db postgres docker image version by @KonstantinosAng in https://github.com/StanGirard/quivr/pull/1853
+
+## New Contributors
+* @KonstantinosAng made their first contribution in https://github.com/StanGirard/quivr/pull/1853
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.131...v0.0.132
+
 ## 0.0.131 (2023-12-06)
 
 ## What's Changed
