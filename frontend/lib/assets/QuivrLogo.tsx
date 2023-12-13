@@ -15,7 +15,7 @@ export const QuivrLogo = ({
   return (
     <Image
       src={src}
-      alt="WildcatGPT Logo"
+      alt="Quivr Logo"
       width={size}
       height={size}
       style={{ filter }}
