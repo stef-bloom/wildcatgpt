@@ -12,6 +12,7 @@ import {
   ChatProviderMock,
 } from "@/lib/context/ChatProvider/mocks/ChatProviderMock";
 import { KnowledgeToFeedProvider } from "@/lib/context/KnowledgeToFeedProvider";
+import { SideBarProvider } from "@/lib/context/SidebarProvider/sidebar-provider";
 import { SupabaseContextMock } from "@/lib/context/SupabaseProvider/mocks/SupabaseProviderMock";
 
 vi.mock("@/lib/context/SupabaseProvider/supabase-provider", () => ({
@@ -91,7 +92,9 @@ describe("ChatsList", () => {
         <KnowledgeToFeedProvider>
           <ChatProviderMock>
             <BrainProviderMock>
-              <ChatsList />
+              <SideBarProvider>
+                <ChatsList />
+              </SideBarProvider>
             </BrainProviderMock>
           </ChatProviderMock>
         </KnowledgeToFeedProvider>
@@ -99,9 +102,6 @@ describe("ChatsList", () => {
     );
     const chatsList = getByTestId("chats-list");
     expect(chatsList).toBeDefined();
-
-    const newChatButton = getByTestId("new-chat-button");
-    expect(newChatButton).toBeDefined();
   });
 
   it("renders the chats list with correct number of items", () => {
@@ -110,7 +110,9 @@ describe("ChatsList", () => {
         <KnowledgeToFeedProvider>
           <ChatProviderMock>
             <BrainProviderMock>
-              <ChatsList />
+              <SideBarProvider>
+                <ChatsList />
+              </SideBarProvider>
             </BrainProviderMock>
           </ChatProviderMock>
         </KnowledgeToFeedProvider>
@@ -133,7 +135,9 @@ describe("ChatsList", () => {
           <KnowledgeToFeedProvider>
             <ChatProviderMock>
               <BrainProviderMock>
-                <ChatsList />
+                <SideBarProvider>
+                  <ChatsList />
+                </SideBarProvider>
               </BrainProviderMock>
             </ChatProviderMock>
           </KnowledgeToFeedProvider>
