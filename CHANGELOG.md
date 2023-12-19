@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.0.142 (2023-12-18)
+
+## What's Changed
+* feat: add new brain management page by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1906
+* feat: update brain details page by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1910
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.141...v0.0.142
+
+## 0.0.141 (2023-12-15)
+
+## What's Changed
+* feat[i18n]: Added i18n documenation to the contribution guidelines  by @NilsJacobsen in https://github.com/StanGirard/quivr/pull/1899
+* feat: Update Explore button label by @StanGirard in https://github.com/StanGirard/quivr/pull/1901
+* feat: chat with compositeBrain ( with/out streaming) by @gozineb in https://github.com/StanGirard/quivr/pull/1883
+* feat: update brains library by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1903
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.140...v0.0.141
+
+## 0.0.140 (2023-12-14)
+
+## What's Changed
+* feat: Update pytest command in Makefile and add new test by @StanGirard in https://github.com/StanGirard/quivr/pull/1893
+* chore: add IDE extension for i18n handling by @NilsJacobsen in https://github.com/StanGirard/quivr/pull/1896
+* feat: add chat view new design by @mamadoudicko in https://github.com/StanGirard/quivr/pull/1897
+
+## New Contributors
+* @NilsJacobsen made their first contribution in https://github.com/StanGirard/quivr/pull/1896
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.139...v0.0.140
+
 ## 0.0.139 (2023-12-14)
 
 ## What's Changed
