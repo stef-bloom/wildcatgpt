@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { AiFillStar } from "react-icons/ai";
 import { LuChevronRight } from "react-icons/lu";
 
 import { useHomepageTracking } from "@/app/(home)/hooks/useHomepageTracking";
@@ -18,7 +19,21 @@ export const useHomeHeader = ({ color }: UseHomeHeaderProps) => {
   const { onLinkClick } = useHomepageTracking();
 
   const navItems: NavbarItem[] = [
-    { href: "/login", label: t("sign_up") },
+    {
+      href: "https://theodo.co.uk",
+      label: `${t("sponsored_by")} Theodo`,
+      rightIcon: null,
+      newTab: true,
+      className: "underline",
+    },
+    {
+      href: "https://github.com/StanGirard/quivr",
+      label: t("star_us"),
+      leftIcon: <AiFillStar size={16} className="hidden md:inline" />,
+      rightIcon: null,
+    },
+    { href: "/blog", label: t("blog"), rightIcon: null, newTab: true },
+    { href: "https://docs.quivr.app", label: t("docs"), rightIcon: null, newTab: true },
     { href: "/login", label: t("sign_in") },
   ];
 

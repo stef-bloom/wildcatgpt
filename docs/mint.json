@@ -41,21 +41,43 @@
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://quivr.app/blog"
+    },
+    {
+      "name": "Status",
+      "icon": "signal",
+      "url": "https://uptime.quivr.app"
     }
   ],
   "navigation": [
     {
       "group": "Home",
       "pages": [
-        "intro",
-        "getting-started/quickstart"
+        "home/intro",
+        "home/quickstart",
+        {
+          "group": "Use Cases",
+          "pages": [
+            "home/use-cases/entreprise-gpt",
+            "home/use-cases/content-generation",
+            "home/use-cases/hr",
+            "home/use-cases/market-analysis",
+            "home/use-cases/project-management"
+          ]
+        }
       ]
     },
     {
       "group": "Power-user",
       "pages": [
         "getting-started/brain",
-        "getting-started/api-based-brains"
+        "getting-started/api-based-brains",
+        {
+          "group": "Examples",
+          "pages": [
+            "examples/generate-images",
+            "examples/zapier"
+          ]
+        }
       ]
     },
     {
@@ -83,7 +105,6 @@
       "group": "Self Hosting",
       "pages": [
         "developers/selfHosting/run_fully_local",
-        "developers/selfHosting/vps_install",
         "developers/selfHosting/authentication"
       ]
     },
