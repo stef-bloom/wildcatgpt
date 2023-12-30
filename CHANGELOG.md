@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.0.148 (2023-12-28)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.147...v0.0.148
+
+## 0.0.147 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1931
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.146...v0.0.147
+
+## 0.0.146 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1929
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.145...v0.0.146
+
+## 0.0.145 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1927
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.144...v0.0.145
+
+## 0.0.144 (2023-12-27)
+
+## What's Changed
+* feat: 🎸 pricing by @StanGirard in https://github.com/StanGirard/quivr/pull/1923
+* feat(pricing): added testimonials and else by @StanGirard in https://github.com/StanGirard/quivr/pull/1925
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.143...v0.0.144
+
 ## 0.0.143 (2023-12-27)
 
 ## What's Changed
