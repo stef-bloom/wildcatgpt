@@ -41,32 +41,55 @@
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://quivr.app/blog"
+    },
+    {
+      "name": "Status",
+      "icon": "signal",
+      "url": "https://uptime.quivr.app"
     }
   ],
   "navigation": [
     {
       "group": "Home",
       "pages": [
-        "intro",
-        "getting-started/quickstart"
+        "home/intro",
+        "home/quickstart",
+        {
+          "group": "Use Cases",
+          "pages": [
+            "home/use-cases/entreprise-gpt",
+            "home/use-cases/content-generation",
+            "home/use-cases/hr",
+            "home/use-cases/market-analysis",
+            "home/use-cases/project-management"
+          ]
+        }
       ]
     },
     {
       "group": "Power-user",
       "pages": [
         "getting-started/brain",
-        "getting-started/api-based-brains"
+        "getting-started/api-based-brains",
+        "getting-started/sharing-brains",
+        {
+          "group": "Examples",
+          "pages": [
+            "examples/generate-images",
+            "examples/zapier",
+            "examples/sell-brains"
+          ]
+        }
       ]
     },
     {
-      "group": "Contribute",
+      "group": "Overview",
       "pages": [
-        "developers/contribution/guidelines",
-        "developers/contribution/architecture",
         "developers/contribution/install",
+        "developers/contribution/stack",
         "developers/contribution/test",
         {
-          "group": "Chains",
+          "group": "RAG",
           "pages": [
             "developers/contribution/chains/qa"
           ]
@@ -74,16 +97,16 @@
         {
           "group": "LLM",
           "pages": [
-            "developers/contribution/llm/private-llm"
+            "developers/contribution/llm/hugging-face",
+            "developers/contribution/llm/ollama"
           ]
-        }
+        },
+        "developers/contribution/guidelines"
       ]
     },
     {
       "group": "Self Hosting",
       "pages": [
-        "developers/selfHosting/run_fully_local",
-        "developers/selfHosting/vps_install",
         "developers/selfHosting/authentication"
       ]
     },
@@ -242,6 +265,12 @@
     "baseUrl": "https://api.quivr.app",
     "auth": {
       "method": "bearer"
+    }
+  },
+  "analytics": {
+    "posthog": {
+      "apiKey": "phc_BqYCVB8PX7VlzNU5MjbN8sET6soqW7jQVq6PrT9pJSJ",
+      "apiHost": "https://us.posthog.com"
     }
   }
 }

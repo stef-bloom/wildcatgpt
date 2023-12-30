@@ -1,5 +1,76 @@
 # Changelog
 
+## 0.0.151 (2023-12-29)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1938
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.150...v0.0.151
+
+## 0.0.150 (2023-12-29)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1936
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.149...v0.0.150
+
+## 0.0.149 (2023-12-29)
+
+## What's Changed
+* feat: 🎸 pricing by @StanGirard in https://github.com/StanGirard/quivr/pull/1935
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.148...v0.0.149
+
+## 0.0.148 (2023-12-28)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.147...v0.0.148
+
+## 0.0.147 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1931
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.146...v0.0.147
+
+## 0.0.146 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1929
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.145...v0.0.146
+
+## 0.0.145 (2023-12-28)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1927
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.144...v0.0.145
+
+## 0.0.144 (2023-12-27)
+
+## What's Changed
+* feat: 🎸 pricing by @StanGirard in https://github.com/StanGirard/quivr/pull/1923
+* feat(pricing): added testimonials and else by @StanGirard in https://github.com/StanGirard/quivr/pull/1925
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.143...v0.0.144
+
+## 0.0.143 (2023-12-27)
+
+## What's Changed
+* docs: ✏️ mintlify by @StanGirard in https://github.com/StanGirard/quivr/pull/1917
+* feat(docs): added homepage by @StanGirard in https://github.com/StanGirard/quivr/pull/1919
+* docs: ✏️ homepage by @StanGirard in https://github.com/StanGirard/quivr/pull/1922
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.142...v0.0.143
+
 ## 0.0.142 (2023-12-18)
 
 ## What's Changed

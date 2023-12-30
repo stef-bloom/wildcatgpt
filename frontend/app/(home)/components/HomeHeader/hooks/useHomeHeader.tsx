@@ -18,7 +18,8 @@ export const useHomeHeader = ({ color }: UseHomeHeaderProps) => {
   const { onLinkClick } = useHomepageTracking();
 
   const navItems: NavbarItem[] = [
-    { href: "/login", label: t("sign_up") },
+    { href: "/pricing", label: t("pricing"), rightIcon: null },
+    { href: "https://docs.quivr.app", label: t("docs"), rightIcon: null, newTab: true },
     { href: "/login", label: t("sign_in") },
   ];
 

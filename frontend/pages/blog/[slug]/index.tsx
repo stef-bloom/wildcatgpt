@@ -119,7 +119,7 @@ const BlogPostDetail = ({ post }: InferGetStaticPropsType<typeof getStaticProps>
               <div className="text-2xl font-bold cursor-pointer">WildcatGPT</div>
             </Link>
             <div className="space-x-4">
-              <Link className="text-zinc-900 hover:text-zinc-700" href="https://quivr.app">Try Quivr</Link>
+              <Link className="text-zinc-900 hover:text-zinc-700" href="https://www.WildcatGPT.com">Try WildcatGPT</Link>
             </div>
           </nav>
         </div>
