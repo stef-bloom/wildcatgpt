@@ -41,7 +41,7 @@
         "what_is_brain": "What is a brain ?",
         "what_is_quivr": "What is WildcatGPT ?"
     },
-    "parameters": "Parameters",
+    "parameters": "Settings",
     "receivedResponse": "Received response. Starting to handle stream...",
     "resposeBodyNull": "Response body is null",
     "shortcut_choose_prompt": "#: Choose a specific prompt",
