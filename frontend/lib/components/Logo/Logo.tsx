@@ -9,7 +9,7 @@ export const Logo = (): JSX.Element => {
       className="flex items-center gap-4"
     >
       <Image
-        src={"/logo.png"}
+        src={"/logo-wildcat-gpt.svg"}
         alt="WildcatGPT Logo"
         width={48}
         height={48}
