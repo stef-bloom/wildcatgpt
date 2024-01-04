@@ -1,5 +1,45 @@
 # Changelog
 
+## 0.0.157 (2024-01-04)
+
+## What's Changed
+* feat: 🎸 posthog by @StanGirard in https://github.com/StanGirard/quivr/pull/1978
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.156...v0.0.157
+
+## 0.0.156 (2024-01-04)
+
+## What's Changed
+* fix: 🐛 models by @StanGirard in https://github.com/StanGirard/quivr/pull/1973
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.155...v0.0.156
+
+## 0.0.155 (2024-01-04)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.154...v0.0.155
+
+## 0.0.154 (2024-01-04)
+
+## What's Changed
+* feat: 🎸 models by @StanGirard in https://github.com/StanGirard/quivr/pull/1967
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.153...v0.0.154
+
+## 0.0.153 (2024-01-03)
+
+## What's Changed
+* chore(deps): Pin Node.js by @renovate in https://github.com/StanGirard/quivr/pull/1952
+* chore(deps): Pin dependencies by @renovate in https://github.com/StanGirard/quivr/pull/1953
+* chore(deps): Update actions/checkout action to v4 by @renovate in https://github.com/StanGirard/quivr/pull/1957
+* chore(deps): Update actions/setup-node action to v4 by @renovate in https://github.com/StanGirard/quivr/pull/1958
+* feat: 🎸 usage by @StanGirard in https://github.com/StanGirard/quivr/pull/1966
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.152...v0.0.153
+
 ## 0.0.152 (2024-01-02)
 
 ## What's Changed
