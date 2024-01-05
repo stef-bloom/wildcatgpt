@@ -57,7 +57,7 @@
     "thinking": "Thinking...",
     "title": "Chat with {{brain}}",
     "today": "Today",
-    "tooManyRequests": "You have exceeded the number of requests per day. To continue chatting, please enter an OpenAI API key in your profile or in used brain.",
+    "tooManyRequests": "You have exceeded the number of requests per day. To continue chatting, please upgrade your account or come back tomorrow.",
     "welcome": "Welcome",
     "yesterday": "Yesterday"
 }
