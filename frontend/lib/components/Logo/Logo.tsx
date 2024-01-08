@@ -11,8 +11,8 @@ export const Logo = (): JSX.Element => {
       <Image
         src={"/logo-wildcat-gpt.svg"}
         alt="WildcatGPT Logo"
-        width={32}
-        height={32}
+        width={24}
+        height={24}
       />
       <h1 className="font-bold">WildcatGPT</h1>
     </Link>
