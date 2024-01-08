@@ -58,14 +58,14 @@ export const IntroSection = (): JSX.Element => {
         <div className="w-[80vw] lg:w-[calc(50vw)] lg:shrink-0 lg:max-h-[calc(80vh-100px)] rounded flex items-center justify-center lg:justify-start">
           <Image
             src={laptopImage}
-            alt="Quivr on laptop"
+            alt="WildcatGPT on laptop"
             width={1200}
             height={1200}
             className="hidden sm:block max-w-[calc(80vh-100px)] max-h-[calc(80vh-100px)] xl:scale-125"
           />
           <Image
             src={smartphoneImage}
-            alt="Quivr on smartphone"
+            alt="WildcatGPT on smartphone"
             width={640}
             height={640}
             className="sm:hidden"
