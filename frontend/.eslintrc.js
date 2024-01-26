@@ -41,7 +41,9 @@ module.exports = {
           ["external", "builtin"],
           "unknown",
           "internal",
-          ["parent", "sibling", "index"],
+          "sibling",
+          "parent",
+          "index",
         ],
         alphabetize: {
           order: "asc",
@@ -127,17 +129,10 @@ module.exports = {
       },
       rules: {
         "@typescript-eslint/prefer-optional-chain": "error",
+        "react-hooks/exhaustive-deps": "off",
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": "error",
         "@typescript-eslint/prefer-nullish-coalescing": "error",
-        "@typescript-eslint/strict-boolean-expressions": [
-          "error",
-          {
-            allowString: false,
-            allowNumber: false,
-            allowNullableObject: true,
-          },
-        ],
         "@typescript-eslint/ban-ts-comment": [
           "error",
           {

@@ -4,7 +4,6 @@ import { CopyButton } from "./components/CopyButton";
 import { MessageContent } from "./components/MessageContent";
 import { QuestionBrain } from "./components/QuestionBrain";
 import { QuestionPrompt } from "./components/QuestionPrompt";
-import { SourcesButton } from "./components/SourcesButton";
 import { useMessageRow } from "./hooks/useMessageRow";
 
 type MessageRowProps = {
@@ -13,6 +12,9 @@ type MessageRowProps = {
   brainName?: string | null;
   promptName?: string | null;
   children?: React.ReactNode;
+  metadata?: {
+    sources?: [string] | [];
+  };
 };
 
 export const MessageRow = React.forwardRef(
@@ -32,18 +34,7 @@ export const MessageRow = React.forwardRef(
       text,
     });
 
-    let messageContent = text ?? "";
-    let sourcesContent = "";
-
-    const sourcesIndex = messageContent.lastIndexOf("**Sources:**");
-    const hasSources = sourcesIndex !== -1;
-
-    if (hasSources) {
-      sourcesContent = messageContent
-        .substring(sourcesIndex + "**Sources:**".length)
-        .trim();
-      messageContent = messageContent.substring(0, sourcesIndex).trim();
-    }
+    const messageContent = text ?? "";
 
     return (
       <div className={containerWrapperClasses}>
@@ -58,7 +49,6 @@ export const MessageRow = React.forwardRef(
             <div className="flex items-center gap-2">
               {!isUserSpeaker && (
                 <>
-                  {hasSources && <SourcesButton sources={sourcesContent} />}
                   <CopyButton handleCopy={handleCopy} isCopied={isCopied} />
                 </>
               )}

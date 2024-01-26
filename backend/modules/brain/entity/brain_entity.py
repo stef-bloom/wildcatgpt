@@ -2,9 +2,8 @@ from enum import Enum
 from typing import List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel
-
 from modules.brain.entity.api_brain_definition_entity import ApiBrainDefinitionEntity
+from pydantic import BaseModel
 
 
 class BrainType(str, Enum):
@@ -26,6 +25,8 @@ class BrainEntity(BaseModel):
     brain_type: BrainType
     brain_definition: Optional[ApiBrainDefinitionEntity]
     connected_brains_ids: Optional[List[UUID]]
+    raw: Optional[bool]
+    jq_instructions: Optional[str]
 
     @property
     def id(self) -> UUID:

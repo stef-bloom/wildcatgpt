@@ -1,5 +1,181 @@
 # Changelog
 
+## 0.0.184 (2024-01-26)
+
+## What's Changed
+* feat(panel): added by @Zewed in https://github.com/StanGirard/quivr/pull/2088
+* feat: 🎸 api by @StanGirard in https://github.com/StanGirard/quivr/pull/2078
+* fix(frontend): clear message input on submit by @Zewed in https://github.com/StanGirard/quivr/pull/2087
+* fix: 🐛 related by @StanGirard in https://github.com/StanGirard/quivr/pull/2090
+* feat: Added translation status badge from inlang by @NilsJacobsen in https://github.com/StanGirard/quivr/pull/2080
+* fix(streaming): Data Truncation Issue in useHandleStream Function by @openperf in https://github.com/StanGirard/quivr/pull/2079
+* feat: 🎸 sources by @StanGirard in https://github.com/StanGirard/quivr/pull/2092
+* fix(frontend): clean related Brains useEffect by @Zewed in https://github.com/StanGirard/quivr/pull/2091
+
+## New Contributors
+* @openperf made their first contribution in https://github.com/StanGirard/quivr/pull/2079
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.183...v0.0.184
+
+## 0.0.183 (2024-01-24)
+
+## What's Changed
+* fix: 🐛 subscription by @StanGirard in https://github.com/StanGirard/quivr/pull/2081
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.182...v0.0.183
+
+## 0.0.182 (2024-01-24)
+
+## What's Changed
+* fix: 🐛 crawl by @StanGirard in https://github.com/StanGirard/quivr/pull/2076
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.181...v0.0.182
+
+## 0.0.181 (2024-01-23)
+
+## What's Changed
+* fix(frontend): unable multiple enter on search page by @Zewed in https://github.com/StanGirard/quivr/pull/2074
+* fix(frontend): force brain on search was broken by @Zewed in https://github.com/StanGirard/quivr/pull/2075
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.180...v0.0.181
+
+## 0.0.180 (2024-01-23)
+
+## What's Changed
+* fix: 🐛 api by @StanGirard in https://github.com/StanGirard/quivr/pull/2068
+* feat(frontend): Add Brain On Search Page by @Zewed in https://github.com/StanGirard/quivr/pull/2067
+* fix(frontend): uniformize case for types by @Zewed in https://github.com/StanGirard/quivr/pull/2071
+* fix: 🐛 gitconfig by @StanGirard in https://github.com/StanGirard/quivr/pull/2072
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.179...v0.0.180
+
+## 0.0.179 (2024-01-22)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.178...v0.0.179
+
+## 0.0.178 (2024-01-22)
+
+## What's Changed
+* fix(frontend): use mention brain on search bar by @Zewed in https://github.com/StanGirard/quivr/pull/2060
+* feat: 🎸 cpu by @StanGirard in https://github.com/StanGirard/quivr/pull/2065
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.177...v0.0.178
+
+## 0.0.177 (2024-01-22)
+
+## What's Changed
+* fix: 🐛 usage by @StanGirard in https://github.com/StanGirard/quivr/pull/2062
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.176...v0.0.177
+
+## 0.0.176 (2024-01-22)
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.175...v0.0.176
+
+## 0.0.175 (2024-01-22)
+
+## What's Changed
+* fix: 🐛 limits by @StanGirard in https://github.com/StanGirard/quivr/pull/2058
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.174...v0.0.175
+
+## 0.0.174 (2024-01-22)
+
+## What's Changed
+* fix(frontend): remove actions modal by @Zewed in https://github.com/StanGirard/quivr/pull/2054
+* feat: 🎸 usage by @StanGirard in https://github.com/StanGirard/quivr/pull/2057
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.173...v0.0.174
+
+## 0.0.173 (2024-01-22)
+
+## What's Changed
+* fix(api-brains): fixed with new types of brains by @StanGirard in https://github.com/StanGirard/quivr/pull/2052
+* fix(frontend): font size on chat feed by @Zewed in https://github.com/StanGirard/quivr/pull/2051
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.172...v0.0.173
+
+## 0.0.172 (2024-01-22)
+
+## What's Changed
+* feat(frontend): handle mentions in search bar by @Zewed in https://github.com/StanGirard/quivr/pull/2049
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.171...v0.0.172
+
+## 0.0.171 (2024-01-22)
+
+## What's Changed
+* fix(frontend): don't set default brain as current brain and remove change brain button by @Zewed in https://github.com/StanGirard/quivr/pull/2047
+* feat: 🎸 brains by @StanGirard in https://github.com/StanGirard/quivr/pull/2048
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.170...v0.0.171
+
+## 0.0.170 (2024-01-21)
+
+## What's Changed
+* fix(frontend): translate configure for brains and successfully deleted for chat by @Zewed in https://github.com/StanGirard/quivr/pull/2042
+* fix(frontend): change search icon on menu by @Zewed in https://github.com/StanGirard/quivr/pull/2043
+* fix: 🐛 search by @StanGirard in https://github.com/StanGirard/quivr/pull/2045
+* fix(frontend): remove brain choice when search page displays by @Zewed in https://github.com/StanGirard/quivr/pull/2044
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.169...v0.0.170
+
+## 0.0.169 (2024-01-21)
+
+## What's Changed
+* feat(brains): added now multiple brains close by by @StanGirard in https://github.com/StanGirard/quivr/pull/2039
+* fix(frontend): set chat messages only if needed by @Zewed in https://github.com/StanGirard/quivr/pull/2040
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.168...v0.0.169
+
+## 0.0.168 (2024-01-20)
+
+## What's Changed
+* fix(frontend): don t load chat items on search by @Zewed in https://github.com/StanGirard/quivr/pull/2036
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.167...v0.0.168
+
+## 0.0.167 (2024-01-20)
+
+## What's Changed
+* fix(frontend): chat still refreshs on first request by @Zewed in https://github.com/StanGirard/quivr/pull/2034
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.166...v0.0.167
+
+## 0.0.166 (2024-01-20)
+
+## What's Changed
+* feat(search): new way to interact with Quivr by @StanGirard in https://github.com/StanGirard/quivr/pull/2026
+* feat: adding search by @StanGirard in https://github.com/StanGirard/quivr/pull/2031
+* fix(frontend): remove close menu icon on mobile by @Zewed in https://github.com/StanGirard/quivr/pull/2030
+* fix(frontend): chat refreshed on first search request by @Zewed in https://github.com/StanGirard/quivr/pull/2033
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.165...v0.0.166
+
+## 0.0.165 (2024-01-17)
+
+## What's Changed
+* fix(frontend): wrong placeholder message date by @Zewed in https://github.com/StanGirard/quivr/pull/2023
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.164...v0.0.165
+
 ## 0.0.164 (2024-01-14)
 
 **Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.163...v0.0.164

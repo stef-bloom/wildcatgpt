@@ -17,6 +17,7 @@ import { useEventTracking } from "@/services/analytics/june/useEventTracking";
 
 import { useLocalStorageChatConfig } from "./useLocalStorageChatConfig";
 import { useQuestion } from "./useQuestion";
+
 import { ChatQuestion } from "../types";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -58,14 +59,12 @@ export const useChat = () => {
 
       let currentChatId = chatId;
 
-      let shouldUpdateUrl = false;
-
       //if chatId is not set, create a new chat. Chat name is from the first question
       if (currentChatId === undefined) {
         const chat = await createChat(getChatNameFromQuestion(question));
         currentChatId = chat.chat_id;
         setChatId(currentChatId);
-        shouldUpdateUrl = true;
+        router.push(`/chat/${currentChatId}`);
         void queryClient.invalidateQueries({
           queryKey: [CHATS_DATA_KEY],
         });
@@ -84,7 +83,7 @@ export const useChat = () => {
       }
 
       const chatQuestion: ChatQuestion = {
-        model,
+        model, // eslint-disable-line @typescript-eslint/no-unsafe-assignment
         question,
         temperature: temperature,
         max_tokens: maxTokens,
@@ -94,10 +93,6 @@ export const useChat = () => {
 
       callback?.();
       await addStreamQuestion(currentChatId, chatQuestion);
-
-      if (shouldUpdateUrl) {
-        router.replace(`/chat/${currentChatId}`);
-      }
     } catch (error) {
       console.error({ error });
 
