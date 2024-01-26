@@ -20,15 +20,17 @@ class CreateApiBrainDefinition(BaseModel, extra=Extra.forbid):
     params: Optional[ApiBrainDefinitionSchema] = ApiBrainDefinitionSchema()
     search_params: ApiBrainDefinitionSchema = ApiBrainDefinitionSchema()
     secrets: Optional[list[ApiBrainDefinitionSecret]] = []
+    raw: Optional[bool] = False
+    jq_instructions: Optional[str] = None
 
 
 class CreateBrainProperties(BaseModel, extra=Extra.forbid):
     name: Optional[str] = "Default brain"
-    description: Optional[str] = "This is a description"
+    description: str = "This is a description"
     status: Optional[str] = "private"
     model: Optional[str]
     temperature: Optional[float] = 0.0
-    max_tokens: Optional[int] = 256
+    max_tokens: Optional[int] = 2000
     prompt_id: Optional[UUID] = None
     brain_type: Optional[BrainType] = BrainType.DOC
     brain_definition: Optional[CreateApiBrainDefinition]

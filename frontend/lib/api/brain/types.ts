@@ -1,7 +1,7 @@
 import { UUID } from "crypto";
 
 import { BrainRoleType } from "@/lib/components/BrainUsers/types";
-import { BrainStatus, BrainType, Model } from "@/lib/types/brainConfig";
+import { BrainStatus, BrainType, Model } from "@/lib/types/BrainConfig";
 
 export type ApiBrainDefinitionSchemaPropertyType = "string" | "number";
 
@@ -25,12 +25,12 @@ export type SubscriptionUpdatableProperties = {
 
 export type ListFilesProps = {
   files: {
-      file_name: string;
-      file_sha1: string;
-      file_size: number;
-      file_url: string;
-      file_id: string;
-      file_similarity: number;
+    file_name: string;
+    file_sha1: string;
+    file_size: number;
+    file_url: string;
+    file_id: string;
+    file_similarity: number;
   }[];
 };
 
@@ -47,6 +47,8 @@ export type ApiBrainDefinition = {
   search_params: ApiBrainDefinitionSchema;
   params: ApiBrainDefinitionSchema;
   secrets?: ApiBrainDefinitionSecret[];
+  raw: boolean;
+  jq_instructions: string;
 };
 
 export type CreateBrainInput = {

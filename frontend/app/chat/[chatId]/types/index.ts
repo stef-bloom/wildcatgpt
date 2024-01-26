@@ -1,5 +1,7 @@
 import { UUID } from "crypto";
 
+import { CloseBrain } from "@/lib/types/MessageMetadata";
+
 export type ChatQuestion = {
   model?: string;
   question?: string;
@@ -16,6 +18,11 @@ export type ChatMessage = {
   message_time: string;
   prompt_title?: string;
   brain_name?: string;
+  brain_id?: UUID;
+  metadata?: {
+    sources?: [string];
+    close_brains?: CloseBrain[];
+  };
 };
 
 type NotificationStatus = "Pending" | "Done";
