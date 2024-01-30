@@ -14,6 +14,8 @@ origins = [
     "http://www.wildcatgpt.com",
     "https://wildcatgpt.com",
     "https://www.wildcatgpt.com",
+    "http://dev.wildcatgpt.com",
+    "https://dev.wildcatgpt.com",
     "*",
 ]
 
