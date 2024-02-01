@@ -24,8 +24,8 @@ export const HomeHeader = ({ color = "white" }: HomeNavProps): JSX.Element => {
           color === "black" ? "hover:text-black" : "hover:text-white"
         )}
       >
-        <QuivrLogo size={64} color={color} />
-        <div>Quivr</div>
+        <QuivrLogo size={250} color={color} />
+        <div>WildcatGPT</div>
       </Link>
       <div className="hidden md:flex">
         <ul className="flex gap-4 items-center">{navLinks("desktop")}</ul>
