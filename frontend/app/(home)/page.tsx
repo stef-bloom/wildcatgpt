@@ -6,10 +6,12 @@ import { redirectToPreviousPageOrSearchPage } from "@/lib/helpers/redirectToPrev
 
 import {
   DemoSection,
+  FooterSection,
   HomeHeader,
   HomeSection,
   IntroSection,
   SecuritySection,
+  TestimonialsSection,
 } from "./components";
 import { HomeHeaderBackground } from "./components/HomeHeader/components/HomeHeaderBackground";
 import { UseCases } from "./components/UseCases/UseCases";
@@ -53,7 +55,16 @@ const HomePage = (): JSX.Element => {
           <SecuritySection />
         </HomeSection>
 
+        <HomeSection bg="bg-[#FCFAF6]" slantCurrent="up">
+          <TestimonialsSection />
+        </HomeSection>
 
+        <HomeSection
+          bg="bg-gradient-to-b from-[#D07DF9] to-[#7A27FD]"
+          slantBefore="up"
+        >
+          <FooterSection />
+        </HomeSection>
       </main>
     </>
   );
