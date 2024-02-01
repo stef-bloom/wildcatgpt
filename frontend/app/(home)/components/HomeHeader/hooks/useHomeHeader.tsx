@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { AiFillStar } from "react-icons/ai";
 import { LuChevronRight } from "react-icons/lu";
 
 import { useHomepageTracking } from "@/app/(home)/hooks/useHomepageTracking";
@@ -19,15 +18,8 @@ export const useHomeHeader = ({ color }: UseHomeHeaderProps) => {
   const { onLinkClick } = useHomepageTracking();
 
   const navItems: NavbarItem[] = [
-    {
-      href: "https://github.com/StanGirard/quivr",
-      label: t("star_us"),
-      leftIcon: <AiFillStar size={16} className="hidden md:inline" />,
-      rightIcon: null,
-    },
     { href: "/pricing", label: t("pricing"), rightIcon: null },
     { href: "https://docs.quivr.app", label: t("docs"), rightIcon: null, newTab: true },
-    { href: "/blog", label: t("blog"), rightIcon: null, newTab: true },
     { href: "/login", label: t("sign_in") },
   ];
 
