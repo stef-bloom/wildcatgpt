@@ -30,11 +30,11 @@ const Main = (): JSX.Element => {
       <main className="h-full flex flex-col items-center justify-center">
         <section className="w-full md:w-1/2 lg:w-1/3 flex flex-col gap-2">
           <Link href="/" className="flex justify-center">
-            <QuivrLogo size={150} color="black" />
+            <QuivrLogo size={80} color="black" />
           </Link>
           <p className="text-center text-4xl font-medium">
             {t("talk_to", { ns: "login" })}{" "}
-            <span className="text-primary">WildcatGPT</span>
+            <span className="text-primary">Quivr</span>
           </p>
           <div className="mt-5 flex flex-col">
             <FormProvider {...methods}>
