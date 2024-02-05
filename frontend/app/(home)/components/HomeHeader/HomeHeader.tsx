@@ -24,7 +24,7 @@ export const HomeHeader = ({ color = "white" }: HomeNavProps): JSX.Element => {
           color === "black" ? "hover:text-black" : "hover:text-white"
         )}
       >
-        <QuivrLogo size={250} color={color} />
+        <QuivrLogo size={50} color={color} />
         <div>WildcatGPT</div>
       </Link>
       <div className="hidden md:flex">
