@@ -26,11 +26,21 @@ const Search = (): JSX.Element => {
           <QuivrLogo size={80} color="black" />
           <div className={styles.quivr_text}>
             <span>Talk to </span>
-            <span className={styles.quivr_text_primary}>WildcatGPT</span>
+            <span className={styles.quivr_text_primary}>Quivr</span>
           </div>
         </div>
         <div className={styles.search_bar_wrapper}>
           <SearchBar />
+        </div>
+      </div>
+      <div className={styles.shortcuts_card_wrapper}>
+        <div className={styles.shortcut_wrapper}>
+          <span className={styles.shortcut}>@</span>
+          <span>Select a brain</span>
+        </div>
+        <div className={styles.shortcut_wrapper}>
+          <span className={styles.shortcut}>#</span>
+          <span>Select a prompt</span>
         </div>
       </div>
     </div>
