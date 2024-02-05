@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.0.193 (2024-02-04)
+
+## What's Changed
+* feat(frontend): design changes on user profile by @Zewed in https://github.com/StanGirard/quivr/pull/2140
+* fix(frontend): rename upgrade to plus to upgrade by @Zewed in https://github.com/StanGirard/quivr/pull/2141
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.192...v0.0.193
+
+## 0.0.192 (2024-02-02)
+
+## What's Changed
+* feat(frontend): display which brain you are talking to by @Zewed in https://github.com/StanGirard/quivr/pull/2137
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.191...v0.0.192
+
+## 0.0.191 (2024-02-01)
+
+## What's Changed
+* fix(frontend): no sources repetition in data panel by @Zewed in https://github.com/StanGirard/quivr/pull/2132
+* fix(frontend): don't show copy icon when thinking by @Zewed in https://github.com/StanGirard/quivr/pull/2133
+
+
+**Full Changelog**: https://github.com/StanGirard/quivr/compare/v0.0.190...v0.0.191
+
 ## 0.0.190 (2024-01-31)
 
 ## What's Changed
