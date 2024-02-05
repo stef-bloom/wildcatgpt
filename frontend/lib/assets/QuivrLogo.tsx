@@ -16,15 +16,12 @@ export const QuivrLogo = ({
     src = "/logo-accent.svg";
   }
 
-  const filter = color === "black" ? "invert(1)" : "none";
-
   return (
     <Image
       src={src}
       alt="WildcatGPT Logo"
       width={size}
       height={size}
-      style={{ filter }}
     />
   );
 };

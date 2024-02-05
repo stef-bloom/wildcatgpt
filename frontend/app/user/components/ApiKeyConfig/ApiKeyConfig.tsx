@@ -16,7 +16,7 @@ export const ApiKeyConfig = (): JSX.Element => {
 
   return (
     <div>
-      <FieldHeader iconName="key" label={`Quivr ${t("apiKey")}`} />
+      <FieldHeader iconName="key" label={`WildcatGPT ${t("apiKey")}`} />
       {apiKey === "" ? (
         <Button
           data-testid="create-new-key"
