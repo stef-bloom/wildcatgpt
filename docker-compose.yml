@@ -1,30 +1,6 @@
 version: "3.8"
 
 services:
-
-  traefik:
-    image: traefik:v2.4
-    container_name: traefik
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedByDefault=false"
-      - "--entryPoints.web.address=:80"
-      - "--entryPoints.websecure.address=:443"
-      - "--certificatesResolvers.letsencrypt.acme.email=cale@modtechgroup.com"
-      - "--certificatesResolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
-      - "--certificatesResolvers.letsencrypt.acme.tlsChallenge=true"
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8080:8080" # Traefik Dashboard (optional, but useful for debugging)
-    networks:
-      - default
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/letsencrypt:/letsencrypt"
-    restart: always
-
   frontend:
     image: quivr-frontend-prebuilt
     pull_policy: never
@@ -42,14 +18,8 @@ services:
     depends_on:
       - backend-core
     restart: always
-    networks:
-      - default
-
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`wildcatgpt.com`)"
-      - "traefik.http.routers.frontend.entrypoints=websecure"
-      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+    ports:
+      - 3000:3000
 
   backend-core:
     image: stangirard/quivr-backend-prebuilt:latest
@@ -75,23 +45,15 @@ services:
     restart: always
     volumes:
       - ./backend/:/code/
-    networks:
-      - default
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.backend-core.rule=Host(`wildcatgpt.com`) && PathPrefix(`/backend_core`)"
-      - "traefik.http.routers.backend-core.entrypoints=websecure"
-      - "traefik.http.routers.backend-core.tls.certresolver=letsencrypt"
-      - "traefik.http.services.backend-core.loadbalancer.server.port=5050"
-      - "traefik.http.middlewares.backend-core-stripprefix.stripprefix.prefixes=/backend_core"
-      - "traefik.http.routers.backend-core.middlewares=backend-core-stripprefix"
+    ports:
+      - 5050:5050
 
   redis:
-    image: redis:latest@sha256:a7cee7c8178ff9b5297cb109e6240f5072cdaaafd775ce6b586c3c704b06458e
+    image: redis:latest
     container_name: redis
     restart: always
-    networks:
-      - default
+    ports:
+      - 6379:6379
 
   worker:
     pull_policy: if_not_present
@@ -136,10 +98,5 @@ services:
       - redis
       - worker
       - beat
-    networks:
-      - default
-
-networks:
-  default:
-    name: web
-    external: false
+    ports:
+      - 5555:5555
