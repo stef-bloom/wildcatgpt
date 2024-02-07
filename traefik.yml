@@ -1,0 +1,22 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+http:
+  middlewares:
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+
+providers:
+  docker:
+    exposedByDefault: false
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "cale@modtechgroup.com"
+      storage: "/letsencrypt/acme.json"
+      tlsChallenge: {}
