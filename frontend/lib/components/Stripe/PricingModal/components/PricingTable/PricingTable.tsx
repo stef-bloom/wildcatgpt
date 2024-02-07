@@ -1,5 +1,5 @@
-const PRICING_TABLE_ID = process.env.NEXT_PUBLIC_STRIPE_PRICING_TABLE_ID;
-const PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+const PRICING_TABLE_ID = "prctbl_1OgxZYC4PPGgmD6usJckq72R";
+const PUBLISHABLE_KEY = "pk_test_51O58I6C4PPGgmD6u6elN9jAI1Mf2YDAX0S9rPO8Z63vxHxo15LOOVeIATqgZ2MadbHeXH6XBX2P86yr9OHF3GpZl00RuRJy6jH";
 
 export const StripePricingTable = (): JSX.Element => {
   return (

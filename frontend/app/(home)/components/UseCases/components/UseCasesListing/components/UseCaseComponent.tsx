@@ -21,7 +21,7 @@ export const UseCaseComponent = ({
           </div>
           <div className="flex">
             <div className="bg-[#E0DDFC] max-w-[75%] rounded-xl p-4">
-              <span className="text-[#8F8F8F] text-xs">@WildcatGPT</span>
+              <span className="text-[#8F8F8F] text-xs">@Quivr</span>
               <p>{d.answer}</p>
             </div>
           </div>

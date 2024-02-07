@@ -33,6 +33,10 @@
   color: Colors.$dark-grey;
 }
 
+.grey {
+  color: Colors.$normal-grey;
+}
+
 .primary {
   color: Colors.$primary;
 }
@@ -47,10 +51,6 @@
 
 .white {
   color: Colors.$white;
-
-  &:hover {
-    color: Colors.$accent;
-  }
 }
 
 .dangerous {

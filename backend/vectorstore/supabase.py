@@ -2,7 +2,7 @@ from typing import Any, List
 
 from langchain.docstore.document import Document
 from langchain.embeddings.base import Embeddings
-from langchain.vectorstores import SupabaseVectorStore
+from langchain_community.vectorstores import SupabaseVectorStore
 from logger import get_logger
 from supabase.client import Client
 
@@ -79,7 +79,7 @@ class CustomSupabaseVectorStore(SupabaseVectorStore):
             table,
             {
                 "query_embedding": query_embedding,
-                "match_count": self.number_docs,
+                "max_chunk_sum": self.max_input,
                 "p_brain_id": str(self.brain_id),
             },
         ).execute()
