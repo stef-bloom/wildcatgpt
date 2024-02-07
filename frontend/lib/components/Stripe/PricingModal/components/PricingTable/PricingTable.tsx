@@ -1,5 +1,5 @@
-const PRICING_TABLE_ID = "prctbl_1OgxZYC4PPGgmD6usJckq72R";
-const PUBLISHABLE_KEY = "pk_test_51O58I6C4PPGgmD6u6elN9jAI1Mf2YDAX0S9rPO8Z63vxHxo15LOOVeIATqgZ2MadbHeXH6XBX2P86yr9OHF3GpZl00RuRJy6jH";
+const PRICING_TABLE_ID = "prctbl_1OhIseC4PPGgmD6ufYipVidd";
+const PUBLISHABLE_KEY = "pk_live_51O58I6C4PPGgmD6uTAAOinkWsUDZtYGs4V4HYevXMQE10RwfFpHyYpePgFjh0M5NW4Q51kZha7KFhkpJWQWvuz4I00Y8yhITp6";
 
 export const StripePricingTable = (): JSX.Element => {
   return (
