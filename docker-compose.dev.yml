@@ -1,19 +1,37 @@
 version: "3.8"
 
 services:
-  backend-core:
-    image: backend-base
+  frontend:
+    image: quivr-frontend-prebuilt
     pull_policy: never
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_ENV=local
+        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+        - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+        - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+        - NEXT_PUBLIC_CMS_URL=${NEXT_PUBLIC_CMS_URL}
+        - NEXT_PUBLIC_FRONTEND_URL=${NEXT_PUBLIC_FRONTEND_URL}
+    container_name: web
+    depends_on:
+      - backend-core
+    restart: always
+    ports:
+      - 3000:3000
+
+  backend-core:
+    image: stangirard/quivr-backend-prebuilt:latest
+    pull_policy: if_not_present
     env_file:
       - .env
     build:
       context: backend
-      dockerfile: Dockerfile.dev
-      args:
-        - DEV_MODE=true
+      dockerfile: Dockerfile
     container_name: backend-core
-    volumes:
-      - ./backend/:/code/
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:5050/healthz"]
     command:
       - "uvicorn"
       - "main:app"
@@ -25,66 +43,54 @@ services:
       - "--workers"
       - "6"
     restart: always
-
+    volumes:
+      - ./backend/:/code/
     ports:
       - 5050:5050
-      - 5678:5678 # debug port
 
   redis:
-    image: redis:latest@sha256:a7cee7c8178ff9b5297cb109e6240f5072cdaaafd775ce6b586c3c704b06458e
+    image: redis:latest
     container_name: redis
     restart: always
     ports:
       - 6379:6379
 
   worker:
-    pull_policy: never
-    image: backend-base
+    pull_policy: if_not_present
+    image: stangirard/quivr-backend-prebuilt:latest
     env_file:
       - .env
     build:
       context: backend
       dockerfile: Dockerfile
     container_name: worker
-    volumes:
-      - ./backend/:/code/
-    command: >
-      /bin/sh -c "
-      watchmedo auto-restart -d . -p '*.py' --recursive -- celery -A celery_worker worker -l info
-      "
+    command: celery -A celery_worker worker -l info
     restart: always
     depends_on:
       - redis
 
   beat:
-    image: backend-base
-    pull_policy: never
+    image: stangirard/quivr-backend-prebuilt:latest
+    pull_policy: if_not_present
     env_file:
       - .env
     build:
       context: backend
       dockerfile: Dockerfile
-    volumes:
-      - ./backend/:/code/
     container_name: beat
-    command: >
-      /bin/sh -c "
-      watchmedo auto-restart -d . -p '*.py' --recursive -- celery -A celery_worker beat -l info
-      "
+    command: celery -A celery_worker beat -l info
     restart: always
     depends_on:
       - redis
 
   flower:
-    image: backend-base
-    pull_policy: never
+    image: stangirard/quivr-backend-prebuilt:latest
+    pull_policy: if_not_present
     env_file:
       - .env
     build:
       context: backend
       dockerfile: Dockerfile
-    volumes:
-      - ./backend/:/code/
     container_name: flower
     command: celery -A celery_worker flower -l info --port=5555
     restart: always
