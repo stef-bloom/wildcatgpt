@@ -1,4 +1,4 @@
-const PRICING_TABLE_ID = "prctbl_1OhIseC4PPGgmD6ufYipVidd";
+const PRICING_TABLE_ID = "prctbl_1Oj1rOC4PPGgmD6uTSz1Ln10";
 const PUBLISHABLE_KEY = "pk_live_51O58I6C4PPGgmD6uTAAOinkWsUDZtYGs4V4HYevXMQE10RwfFpHyYpePgFjh0M5NW4Q51kZha7KFhkpJWQWvuz4I00Y8yhITp6";
 
 export const StripePricingTable = (): JSX.Element => {
