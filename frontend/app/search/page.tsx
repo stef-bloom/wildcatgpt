@@ -8,7 +8,6 @@ import { useBrainCreationContext } from "@/lib/components/AddBrainModal/componen
 import PageHeader from "@/lib/components/PageHeader/PageHeader";
 import { UploadDocumentModal } from "@/lib/components/UploadDocumentModal/UploadDocumentModal";
 import { SearchBar } from "@/lib/components/ui/SearchBar/SearchBar";
-import { useKnowledgeToFeedContext } from "@/lib/context/KnowledgeToFeedProvider/hooks/useKnowledgeToFeedContext";
 import { useSupabase } from "@/lib/context/SupabaseProvider";
 import { redirectToLogin } from "@/lib/router/redirectToLogin";
 import { ButtonType } from "@/lib/types/QuivrButton";
@@ -18,7 +17,6 @@ import styles from "./page.module.scss";
 const Search = (): JSX.Element => {
   const pathname = usePathname();
   const { session } = useSupabase();
-  const { setShouldDisplayFeedCard } = useKnowledgeToFeedContext();
   const { setIsBrainCreationModalOpened } = useBrainCreationContext();
 
   useEffect(() => {
@@ -36,14 +34,6 @@ const Search = (): JSX.Element => {
       },
       iconName: "brain",
     },
-    {
-      label: "Add knowledge",
-      color: "primary",
-      onClick: () => {
-        setShouldDisplayFeedCard(true);
-      },
-      iconName: "upload",
-    },
   ];
 
   return (
@@ -57,7 +47,7 @@ const Search = (): JSX.Element => {
             <QuivrLogo size={80} color="black" />
             <div className={styles.quivr_text}>
               <span>Talk to </span>
-              <span className={styles.quivr_text_primary}>WildcatGPT</span>
+              <span className={styles.quivr_text_primary}>Quivr</span>
             </div>
           </div>
           <div className={styles.search_bar_wrapper}>

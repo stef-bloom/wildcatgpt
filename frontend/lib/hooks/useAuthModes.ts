@@ -2,6 +2,7 @@
 export const useAuthModes = () => {
   const authModes = process.env.NEXT_PUBLIC_AUTH_MODES?.split(",") ?? [
     "password",
+    "google_sso",
   ];
 
   return {
