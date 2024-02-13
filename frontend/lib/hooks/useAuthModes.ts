@@ -1,8 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useAuthModes = () => {
   const authModes = process.env.NEXT_PUBLIC_AUTH_MODES?.split(",") ?? [
-    "password",
+    "magic_link",
     "google_sso",
+    "password"
   ];
 
   return {
