@@ -15,7 +15,7 @@ const inter = Outfit({ subsets: ["latin"] });
 export const metadata = {
   title: "WildcatGPT - Get a Second Brain with Generative AI",
   description:
-    "Quivr is your second brain in the cloud, designed to easily store and retrieve unstructured information.",
+    "WildcatGPT is your second brain in the cloud, designed to easily store and retrieve unstructured information.",
 };
 
 const RootLayout = async ({
