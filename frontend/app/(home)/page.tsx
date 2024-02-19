@@ -6,6 +6,7 @@ import { redirectToPreviousPageOrSearchPage } from "@/lib/helpers/redirectToPrev
 
 import {
   DemoSection,
+  FooterSection,
   HomeHeader,
   HomeSection,
   IntroSection,
@@ -53,6 +54,12 @@ const HomePage = (): JSX.Element => {
           <SecuritySection />
         </HomeSection>
 
+        <HomeSection
+          bg="bg-gradient-to-b from-[#D07DF9] to-[#7A27FD]"
+          slantBefore="up"
+        >
+          <FooterSection />
+        </HomeSection>
       </main>
     </>
   );

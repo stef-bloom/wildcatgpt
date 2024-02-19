@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { LuChevronRight } from "react-icons/lu";
-import { RiTwitterXLine } from "react-icons/ri";
 
 import Button from "@/lib/components/ui/Button";
-import { GITHUB_URL, LINKEDIN_URL, TWITTER_URL } from "@/lib/config/CONSTANTS";
+import { LINKEDIN_URL } from "@/lib/config/CONSTANTS";
 
 import { useHomepageTracking } from "../../hooks/useHomepageTracking";
 
@@ -56,35 +55,16 @@ export const FooterSection = (): JSX.Element => {
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Quivr LinkedIn"
+            aria-label="WildcatGPT LinkedIn"
             className="hover:text-black"
           >
             <FaLinkedin size={52} />
           </a>
         </li>
-        <li>
-          <a
-            href={TWITTER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Quivr Twitter"
-            className="hover:text-black"
-          >
-            <RiTwitterXLine size={52} />
-          </a>
-        </li>
-        <li>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Quivr GitHub"
-            className="hover:text-black"
-          >
-            <FaGithub size={52} />
-          </a>
-        </li>
       </ul>
+      <p className="text-[14px] text-center">
+        Powered by Quivr
+      </p>
     </div>
   );
 };
