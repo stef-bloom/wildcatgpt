@@ -40,10 +40,11 @@ export const IntroSection = (): JSX.Element => {
               </Button>
             </Link>
             <Link
-              href="/contact"
+              href="https://www.modtechai.com/contact/"
+              target="_blank"
               onClick={(event) => {
                 onLinkClick({
-                  href: "/contact",
+                  href: "https://www.modtechai.com/contact/",
                   label: "CONTACT_SALES",
                   event,
                 });

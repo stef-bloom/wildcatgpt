@@ -35,10 +35,11 @@ export const FooterSection = (): JSX.Element => {
           </Button>
         </Link>
         <Link
-          href="/contact"
+          href="https://www.modtechai.com/contact/"
+          target="_blank"
           onClick={(event) => {
             onLinkClick({
-              href: "/contact",
+              href: "https://www.modtechai.com/contact/",
               label: "CONTACT",
               event,
             });
