@@ -1,20 +1,28 @@
 @use "@/styles/Colors.module.scss";
+@use "@/styles/Radius.module.scss";
 @use "@/styles/ScreenSizes.module.scss";
 @use "@/styles/Spacings.module.scss";
 @use "@/styles/Typography.module.scss";
+@use "@/styles/ZIndexes.module.scss";
 
 .brain_item_wrapper {
   padding-inline: Spacings.$spacing05;
-  border-top: 1px solid Colors.$primary-lightest;
   overflow: hidden;
   display: flex;
   gap: Spacings.$spacing02;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  margin-block: Spacings.$spacing03;
+  border: 1px solid Colors.$lightest-black;
+  border-radius: Radius.$normal;
+  padding-block: Spacings.$spacing03;
+  position: relative;
+  overflow: visible;
 
   &:hover {
-    background-color: Colors.$lightest-black;
+    border-color: Colors.$primary;
+    background-color: Colors.$primary-lightest;
   }
 
   .brain_info_wrapper {
@@ -28,6 +36,7 @@
     .name {
       @include Typography.EllipsisOverflow;
       width: 200px;
+      color: Colors.$black;
     }
 
     .description {
@@ -45,5 +54,13 @@
         display: none;
       }
     }
+  }
+
+  .options_modal {
+    position: absolute;
+    right: Spacings.$spacing02;
+    top: Spacings.$spacing08;
+    z-index: ZIndexes.$modal;
+    padding-bottom: Spacings.$spacing01;
   }
 }

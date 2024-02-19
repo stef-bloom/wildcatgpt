@@ -85,31 +85,16 @@ class CustomSupabaseVectorStore(SupabaseVectorStore):
         ).execute()
 
         match_result = [
-            (
-                Document(
-                    metadata={
-                        **search.get("metadata", {}),
-                        "id": search.get("id", ""),
-                        "similarity": search.get("similarity", 0.0),
-                    },
-                    page_content=search.get("content", ""),
-                ),
-                search.get("similarity", 0.0),
+            Document(
+                metadata={
+                    **search.get("metadata", {}),
+                    "id": search.get("id", ""),
+                    "similarity": search.get("similarity", 0.0),
+                },
+                page_content=search.get("content", ""),
             )
             for search in res.data
             if search.get("content")
         ]
 
-        documents = [doc for doc, _ in match_result]
-        max_tokens_input = self.max_input
-        documents_to_return = []
-
-        # Limits to max_tokens_input with metadata chunk_size
-        for doc in documents:
-            if doc.metadata["chunk_size"] <= max_tokens_input:
-                documents_to_return.append(doc)
-                max_tokens_input -= doc.metadata["chunk_size"]
-            else:
-                break
-
-        return documents_to_return
+        return match_result

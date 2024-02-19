@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.0.206 (2024-02-19)
+
+## What's Changed
+* feat: Add pricing calculation method to GPT4Brain class and update user usage in chat controller by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2210
+* fix(frontend): click on inputs by @Zewed in https://github.com/QuivrHQ/quivr/pull/2212
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.205...v0.0.206
+
+## 0.0.205 (2024-02-19)
+
+## What's Changed
+* Update ollama.mdx by @zangjiucheng in https://github.com/QuivrHQ/quivr/pull/2196
+* feat(integration): improve by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2199
+* fix(frontend): history to threads by @Zewed in https://github.com/QuivrHQ/quivr/pull/2201
+* feat(custom): big brain by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2198
+* feat: Update system templates with custom personality support by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2209
+
+## New Contributors
+* @zangjiucheng made their first contribution in https://github.com/QuivrHQ/quivr/pull/2196
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.204...v0.0.205
+
+## 0.0.203 (2024-02-15)
+
+## What's Changed
+* feat: 🎸 ocr by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2187
+* feat(lcel): migrated to lcel and pydantic by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2185
+* feat(frontend): new brain creation modal by @Zewed in https://github.com/QuivrHQ/quivr/pull/2192
+* feat(integration): implementation by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2191
+* feat(frontend): new design for brain table by @Zewed in https://github.com/QuivrHQ/quivr/pull/2193
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.202...v0.0.203
+
 ## 0.0.202 (2024-02-11)
 
 ## What's Changed

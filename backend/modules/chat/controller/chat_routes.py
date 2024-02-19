@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Annotated, List, Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
@@ -11,11 +11,6 @@ from models.settings import BrainSettings, get_supabase_client
 from models.user_usage import UserUsage
 from modules.brain.service.brain_service import BrainService
 from modules.chat.controller.chat.brainful_chat import BrainfulChat
-from modules.chat.controller.chat.utils import (
-    NullableUUID,
-    check_user_requests_limit,
-    find_model_and_generate_metadata,
-)
 from modules.chat.dto.chats import ChatItem, ChatQuestion
 from modules.chat.dto.inputs import (
     ChatUpdatableProperties,
@@ -77,46 +72,24 @@ def get_answer_generator(
     # Get History
     history = chat_service.get_chat_history(chat_id)
 
-    # Get user settings
-    user_settings = user_usage.get_user_settings()
-
-    # Get Model settings for the user
-    models_settings = user_usage.get_model_settings()
-
     # Generic
     brain, metadata_brain = brain_service.find_brain_from_question(
         brain_id, chat_question.question, current_user, chat_id, history, vector_store
     )
 
-    model_to_use, metadata = find_model_and_generate_metadata(
-        chat_id,
-        brain,
-        user_settings,
-        models_settings,
-        metadata_brain,
-    )
+    logger.info(f"Brain: {brain}")
 
-    # Raises an error if the user has consumed all of of his credits
-    check_user_requests_limit(
-        usage=user_usage,
-        user_settings=user_settings,
-        models_settings=models_settings,
-        model_name=model_to_use.name,
-    )
-
-    send_telemetry("question_asked", {"model_name": model_to_use.name})
+    send_telemetry("question_asked", {"model_name": brain.model})
 
     gpt_answer_generator = chat_instance.get_answer_generator(
+        brain=brain,
         chat_id=str(chat_id),
-        model=model_to_use.name,
-        max_tokens=model_to_use.max_output,
-        max_input=model_to_use.max_input,
+        model=brain.model,
         temperature=0.1,
         streaming=True,
         prompt_id=chat_question.prompt_id,
         user_id=current_user.id,
-        metadata=metadata,
-        brain=brain,
+        user_email=current_user.email,
     )
 
     return gpt_answer_generator
@@ -208,12 +181,13 @@ async def create_question_handler(
     request: Request,
     chat_question: ChatQuestion,
     chat_id: UUID,
-    brain_id: NullableUUID | UUID | None = Query(
-        ..., description="The ID of the brain"
-    ),
+    brain_id: Annotated[UUID | None, Query()] = None,
     current_user: UserIdentity = Depends(get_current_user),
 ):
     try:
+        logger.info(
+            f"Creating question for chat {chat_id} with brain {brain_id} of type {type(brain_id)}"
+        )
         gpt_answer_generator = get_answer_generator(
             chat_id, chat_question, brain_id, current_user
         )
@@ -241,11 +215,10 @@ async def create_stream_question_handler(
     request: Request,
     chat_question: ChatQuestion,
     chat_id: UUID,
-    brain_id: NullableUUID | UUID | None = Query(
-        ..., description="The ID of the brain"
-    ),
+    brain_id: Annotated[UUID | None, Query()] = None,
     current_user: UserIdentity = Depends(get_current_user),
 ) -> StreamingResponse:
+
     chat_instance = BrainfulChat()
     chat_instance.validate_authorization(user_id=current_user.id, brain_id=brain_id)
 
@@ -253,9 +226,16 @@ async def create_stream_question_handler(
         id=current_user.id,
         email=current_user.email,
     )
+
+    logger.info(
+        f"Creating question for chat {chat_id} with brain {brain_id} of type {type(brain_id)}"
+    )
+
     gpt_answer_generator = get_answer_generator(
         chat_id, chat_question, brain_id, current_user
     )
+
+    logger.info(gpt_answer_generator)
 
     try:
         return StreamingResponse(
