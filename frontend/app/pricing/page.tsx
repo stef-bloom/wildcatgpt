@@ -5,7 +5,6 @@ import {
   FooterSection,
   HomeHeader,
   HomeSection,
-  TestimonialsSection,
 } from "../(home)/components";
 import { UseCases } from "../(home)/components/UseCases/UseCases";
 
@@ -33,10 +32,6 @@ const ContactSalesPage = (): JSX.Element => {
         <HomeSection bg="bg-[#362469]">
           <UseCases />
           <div />
-        </HomeSection>
-
-        <HomeSection bg="bg-[#FCFAF6]">
-          <TestimonialsSection />
         </HomeSection>
 
         <HomeSection bg="bg-gradient-to-b from-[#D07DF9] to-[#7A27FD]">

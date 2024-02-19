@@ -9,7 +9,6 @@ import {
   FooterSection,
   HomeHeader,
   HomeSection,
-  TestimonialsSection,
 } from "../(home)/components";
 
 const ContactSalesPage = (): JSX.Element => {
@@ -27,9 +26,6 @@ const ContactSalesPage = (): JSX.Element => {
         <Card className="flex flex-col items-center mt-5 mb-10 p-10 w-full max-w-xl">
           <ContactForm />
         </Card>
-        <HomeSection bg="bg-[#FCFAF6]">
-          <TestimonialsSection />
-        </HomeSection>
         <HomeSection bg="bg-gradient-to-b from-[#D07DF9] to-[#7A27FD]">
           <FooterSection />
         </HomeSection>
