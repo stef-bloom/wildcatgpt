@@ -34,21 +34,12 @@ export const FooterSection = (): JSX.Element => {
             <LuChevronRight size={24} />
           </Button>
         </Link>
-        <Link
+        <a className="flex"
           href="https://www.modtechai.com/contact/"
           target="_blank"
-          onClick={(event) => {
-            onLinkClick({
-              href: "https://www.modtechai.com/contact/",
-              label: "CONTACT",
-              event,
-            });
-          }}
         >
-          <Button variant="tertiary">
             {t("contact_sales")} <LuChevronRight size={24} />
-          </Button>
-        </Link>
+        </a>
       </div>
       <ul className="flex gap-10 mt-5 mb-10 text-black">
         <li>
