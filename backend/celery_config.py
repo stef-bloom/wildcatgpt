@@ -28,10 +28,10 @@ if CELERY_BROKER_URL.startswith("sqs"):
 elif CELERY_BROKER_URL.startswith("redis"):
     celery = Celery(
         __name__,
-        broker=CELERY_BROKER_URL,
-        backend=CELERY_BROKER_URL,
+        broker=f"{CELERY_BROKER_URL}",
+        backend=f"{CELERY_BROKER_URL}",
         task_concurrency=4,
-        worker_prefetch_multiplier=1,
+        worker_prefetch_multiplier=2,
         task_serializer="json",
     )
 else:
