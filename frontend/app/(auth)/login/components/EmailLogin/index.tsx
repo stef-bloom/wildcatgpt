@@ -28,13 +28,6 @@ export const EmailLogin = (): JSX.Element => {
             {t("check_your_email.magic_link", { ns: "login" })}
           </span>{" "}
           {t("check_your_email.part2", { ns: "login" })}
-
-          <a className="underline"
-              href="https://www.modtechai.com/contact/"
-              target="_blank"
-            >
-                contact us
-            </a>.
         </p>
         <div>
           <span>{t("cant_find", { ns: "login" })}</span>{" "}

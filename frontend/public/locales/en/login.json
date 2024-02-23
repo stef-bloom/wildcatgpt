@@ -12,7 +12,7 @@
     "check_your_email": {
         "part1": "We just sent you a ",
         "magic_link": "Magic link",
-        "part2": ", check your emails and follow the steps. Please check your spam folder. If you have a \"@gmail.com\" email, the magic link will not work. Please use the Google login option instead or "
+        "part2": ", check your emails and follow the steps. Please check your spam folder."
     },
     "login": "Login"
 }
