@@ -14,7 +14,7 @@ export const StripePricingOrManageButton = (): JSX.Element => {
   if (is_premium) {
     return (
       <a href={MANAGE_PLAN_URL} target="_blank" rel="noopener">
-        <Button className="w-full">{t("manage_plan")}</Button>
+        <Button className="w-full">4{t("manage_plan")}</Button>
       </a>
     );
   }
