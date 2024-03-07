@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.0.220 (2024-03-06)
+
+## What's Changed
+* fix(frontend): brain name by @Zewed in https://github.com/QuivrHQ/quivr/pull/2311
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.219...v0.0.220
+
+## 0.0.219 (2024-03-06)
+
+## What's Changed
+* feat: Update to newest version of litellm by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2307
+* fix(frontend): small renaiming chat to thread by @Zewed in https://github.com/QuivrHQ/quivr/pull/2306
+* feat(frontend): brain Catalogue by @Zewed in https://github.com/QuivrHQ/quivr/pull/2303
+* feat(frontend): 404 redirection by @Zewed in https://github.com/QuivrHQ/quivr/pull/2309
+* fix(frontend): old brain legacy by @Zewed in https://github.com/QuivrHQ/quivr/pull/2310
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.218...v0.0.219
+
+## 0.0.218 (2024-03-05)
+
+## What's Changed
+* feat: doc as integration by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2297
+* fix(rag): add api_base by @niels-garve in https://github.com/QuivrHQ/quivr/pull/2289
+* fix(frontend): login bug by @Zewed in https://github.com/QuivrHQ/quivr/pull/2300
+
+## New Contributors
+* @niels-garve made their first contribution in https://github.com/QuivrHQ/quivr/pull/2289
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.217...v0.0.218
+
 ## 0.0.217 (2024-03-04)
 
 ## What's Changed
