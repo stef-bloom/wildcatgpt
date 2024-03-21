@@ -10,6 +10,7 @@ origins = [
     "https://www.quivr.app",
     "http://quivr.app",
     "http://www.quivr.app",
+    "https://chat.quivr.app",
     "http://wildcatgpt.com",
     "http://www.wildcatgpt.com",
     "https://wildcatgpt.com",
