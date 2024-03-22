@@ -14,7 +14,6 @@ import { AnimatedDiv } from "./components/AnimationDiv";
 import { DiscussionButton } from "./components/DiscussionButton/DiscussionButton";
 import { HomeButton } from "./components/HomeButton/HomeButton";
 import { ProfileButton } from "./components/ProfileButton/ProfileButton";
-import { SocialsButtons } from "./components/SocialsButtons/SocialsButtons";
 import { StudioButton } from "./components/StudioButton/StudioButton";
 import { ThreadsButton } from "./components/ThreadsButton/ThreadsButton";
 import { UpgradeToPlusButton } from "./components/UpgradeToPlusButton/UpgradeToPlusButton";
@@ -72,9 +71,6 @@ export const Menu = (): JSX.Element => {
                 <UpgradeToPlusButton />
                 <ProfileButton />
               </div>
-            </div>
-            <div className={styles.social_buttons_wrapper}>
-              <SocialsButtons />
             </div>
           </div>
         </AnimatedDiv>
