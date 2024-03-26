@@ -131,7 +131,7 @@ export const Modal = ({
                           className={styles.close_button_wrapper}
                           aria-label="Close"
                         >
-                          <MdClose />
+                          <MdClose className="icon-close" />
                         </button>
                       </Dialog.Close>
                     )}
