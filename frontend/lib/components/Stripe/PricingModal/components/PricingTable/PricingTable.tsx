@@ -4,7 +4,7 @@ const PUBLISHABLE_KEY = "pk_live_51O58I6C4PPGgmD6uTAAOinkWsUDZtYGs4V4HYevXMQE10R
 export const StripePricingTable = (): JSX.Element => {
   return (
     <>
-      <div className="grid md:grid-cols-2 gap-4 p-2 bg-highlight">
+      <div className="grid md:grid-cols-2 gap-4 p-2">
         <div className="space-y-3 text-center">
           <h3 className="text-2xl font-semibold text-black">Free Tier</h3>
           <ul className="list-none space-y-2">
