@@ -49,7 +49,7 @@ const Search = (): JSX.Element => {
           <div className={styles.quivr_logo_wrapper}>
             <QuivrLogo size={80} color={isDarkMode ? "white" : "black"} />
             <div className={styles.quivr_text}>
-              <span>Talk to </span>
+              <span>Chat with </span>
               <span className={styles.quivr_text_primary}>WildcatGPT</span>
             </div>
           </div>
