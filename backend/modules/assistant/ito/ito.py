@@ -9,7 +9,7 @@ from typing import List, Optional
 
 from fastapi import UploadFile
 from logger import get_logger
-from models.user_usage import UserUsage
+from modules.user.service.user_usage import UserUsage
 from modules.assistant.dto.inputs import InputAssistant
 from modules.assistant.ito.utils.pdf_generator import PDFGenerator, PDFModel
 from modules.chat.controller.chat.utils import update_user_usage
@@ -89,9 +89,9 @@ class ITO(BaseModel):
             mail_to = self.current_user.email
             body = f"""
             <div style="text-align: center;">
-                <img src="https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png" alt="Quivr Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
+                <img src="https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png" alt="WildcatGPT Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
                 
-                <p>Quivr's ingestion process has been completed. The processed file is attached.</p>
+                <p>WildcatGPT's ingestion process has been completed. The processed file is attached.</p>
                 
                 <p><strong>Task:</strong> {task_name}</p>
                 
@@ -107,14 +107,14 @@ class ITO(BaseModel):
             <div style="text-align: center;">
                 <p>Please let us know if you have any questions or need further assistance.</p>
                 
-                <p> The Quivr Team </p>
+                <p> The WildcatGPT Team </p>
             </div>
             """
             params = {
                 "from": mail_from,
                 "to": mail_to,
-                "subject": "Quivr Ingestion Processed",
-                "reply_to": "no-reply@quivr.app",
+                "subject": "WildcatGPT Ingestion Processed",
+                "reply_to": "no-reply@modtechai.com",
                 "html": body,
                 "attachments": [{"filename": filename, "content": list(f.read())}],
             }
