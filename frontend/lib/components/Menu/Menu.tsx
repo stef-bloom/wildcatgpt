@@ -11,9 +11,11 @@ import { useUserSettingsContext } from "@/lib/context/UserSettingsProvider/hooks
 
 import styles from "./Menu.module.scss";
 import { AnimatedDiv } from "./components/AnimationDiv";
+import { AssistantsButton } from "./components/AssistantsButton/AssistantsButton";
 import { DiscussionButton } from "./components/DiscussionButton/DiscussionButton";
 import { HomeButton } from "./components/HomeButton/HomeButton";
 import { ProfileButton } from "./components/ProfileButton/ProfileButton";
+import { SocialsButtons } from "./components/SocialsButtons/SocialsButtons";
 import { StudioButton } from "./components/StudioButton/StudioButton";
 import { ThreadsButton } from "./components/ThreadsButton/ThreadsButton";
 import { UpgradeToPlusButton } from "./components/UpgradeToPlusButton/UpgradeToPlusButton";
@@ -31,7 +33,14 @@ export const Menu = (): JSX.Element => {
     return <></>;
   }
 
-  const displayedOnPages = ["/chat", "/library", "/studio", "/search", "/user"];
+  const displayedOnPages = [
+    "/assistants",
+    "/chat",
+    "/library",
+    "/search",
+    "studio",
+    "/user",
+  ];
 
   const isMenuDisplayed = displayedOnPages.some((page) =>
     pathname.includes(page)
@@ -65,12 +74,16 @@ export const Menu = (): JSX.Element => {
                 <DiscussionButton />
                 <HomeButton />
                 <StudioButton />
+                <AssistantsButton />
                 <ThreadsButton />
               </div>
               <div className={styles.block}>
                 <UpgradeToPlusButton />
                 <ProfileButton />
               </div>
+            </div>
+            <div className={styles.social_buttons_wrapper}>
+              <SocialsButtons />
             </div>
           </div>
         </AnimatedDiv>
