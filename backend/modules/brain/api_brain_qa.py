@@ -155,7 +155,7 @@ class APIBrainQA(KnowledgeBrainQA, QAInterface):
         for chunk in response:
             finish_reason = chunk.choices[0].finish_reason
             if finish_reason == "stop":
-                self.log_steps("WildcatGPT has finished", "info")
+                self.log_steps("Quivr has finished", "info")
                 break
             if (
                 "function_call" in chunk.choices[0].delta
@@ -188,7 +188,7 @@ class APIBrainQA(KnowledgeBrainQA, QAInterface):
                     logger.info(f"Error while calling API: {e}")
                     api_call_response = f"Error while calling API: {e}"
                 function_name = function_call["name"]
-                self.log_steps("WildcatGPT has called the API", "info")
+                self.log_steps("Quivr has called the API", "info")
                 messages.append(
                     {
                         "role": "function",

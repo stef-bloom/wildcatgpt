@@ -35,7 +35,7 @@ const Main = (): JSX.Element => {
         </Link>
         <p className={styles.title}>
           {t("talk_to", { ns: "login" })}{" "}
-          <span className="text-primary">WildcatGPT</span>
+          <span className={styles.primary_text}>WildcatGPT</span>
         </p>
         <div className={styles.form_container}>
           <FormProvider {...methods}>
