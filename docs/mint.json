@@ -57,7 +57,19 @@
                     ]
                 },
                 "slackbot",
-                "configuring",
+                {
+                    "group": "Configuring",
+                    "icon": "gear",
+                    "pages": [
+                        "configuring/authentication",
+                        "configuring/new-model",
+                        "configuring/increase-user-usage",
+                        "configuring/resend-emails",
+                        "configuring/reranking",
+                        "configuring/environment-variables",
+                        "configuring/telemetry"
+                    ]
+                },
                 "tech-design",
                 "contact-us"
             ]

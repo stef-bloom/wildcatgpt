@@ -89,9 +89,9 @@ class ITO(BaseModel):
             mail_to = self.current_user.email
             body = f"""
             <div style="text-align: center;">
-                <img src="https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png" alt="WildcatGPT Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
+                <img src="https://wildcatgpt.com/logo.png" alt="WildcatGPT Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
                 
-                <p>WildcatGPT's ingestion process has been completed. The processed file is attached.</p>
+                <p>Quivr's ingestion process has been completed. The processed file is attached.</p>
                 
                 <p><strong>Task:</strong> {task_name}</p>
                 
@@ -107,14 +107,14 @@ class ITO(BaseModel):
             <div style="text-align: center;">
                 <p>Please let us know if you have any questions or need further assistance.</p>
                 
-                <p> The WildcatGPT Team </p>
+                <p> The Quivr Team </p>
             </div>
             """
             params = {
                 "from": mail_from,
                 "to": mail_to,
-                "subject": "WildcatGPT Ingestion Processed",
-                "reply_to": "no-reply@modtechai.com",
+                "subject": "Quivr Ingestion Processed",
+                "reply_to": "no-reply@quivr.app",
                 "html": body,
                 "attachments": [{"filename": filename, "content": list(f.read())}],
             }
