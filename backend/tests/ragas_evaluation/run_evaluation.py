@@ -70,7 +70,7 @@ def main(
     score = evaluate(
         response_dataset,
         metrics=ragas_metrics,
-        llm=ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0.1),
+        llm=ChatOpenAI(model="gpt-4o", temperature=0.1),
         embeddings=LangchainEmbeddingsWrapper(
             OpenAIEmbeddings(model="text-embedding-3-large", dimensions=1536)
         ),
@@ -142,7 +142,7 @@ def generate_replies(
     test_groundtruths = test_data.ground_truth.tolist()
 
     for question in test_questions:
-        response = brain_chain.invoke({"question": question})
+        response = brain_chain.invoke({"question": question, "chat_history": []})
         answers.append(response["answer"].content)
         contexts.append([context.page_content for context in response["docs"]])
 

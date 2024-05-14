@@ -10,7 +10,7 @@ export const AssistantsButton = (): JSX.Element => {
   return (
     <Link href={`/assistants`}>
       <MenuButton
-        label="Wildcat Assistants"
+        label="WildcatGPT Assistants"
         isSelected={isSelected}
         iconName="assistant"
         type="open"

@@ -20,6 +20,7 @@ from modules.onboarding.service.onboarding_service import OnboardingService
 from packages.files.crawl.crawler import CrawlWebsite
 from packages.files.parsers.github import process_github
 from packages.files.processors import filter_file
+from packages.utils.telemetry import maybe_send_telemetry
 
 logger = get_logger(__name__)
 
@@ -71,16 +72,12 @@ def process_file_and_notify(
             os.remove(tmp_file_name)
 
             if notification_id:
-                notification_message = {
-                    "status": message["type"],
-                    "message": message["message"],
-                    "name": file_instance.file.filename if file_instance.file else "",
-                }
+
                 notification_service.update_notification_by_id(
                     notification_id,
                     NotificationUpdatableProperties(
-                        status=NotificationsStatusEnum.Done,
-                        message=str(notification_message),
+                        status=NotificationsStatusEnum.SUCCESS,
+                        description="Your file has been properly uploaded!",
                     ),
                 )
             brain_service.update_brain_last_update_time(brain_id)
@@ -90,19 +87,14 @@ def process_file_and_notify(
         logger.error("TimeoutError")
 
     except Exception as e:
-        notification_message = {
-            "status": "error",
-            "message": "There was an error uploading the file. Please check the file and try again. If the issue persist, please open an issue on Github",
-            "name": file_instance.file.filename if file_instance.file else "",
-        }
         notification_service.update_notification_by_id(
             notification_id,
             NotificationUpdatableProperties(
-                status=NotificationsStatusEnum.Done,
-                message=str(notification_message),
+                status=NotificationsStatusEnum.ERROR,
+                description=f"An error occurred while processing the file: {e}",
             ),
         )
-        raise e
+        return False
 
 
 @celery.task(name="process_crawl_and_notify")
@@ -134,6 +126,13 @@ def process_crawl_and_notify(
                 original_file_name=crawl_website_url,
             )
         )
+        notification_service.update_notification_by_id(
+            notification_id,
+            NotificationUpdatableProperties(
+                status=NotificationsStatusEnum.SUCCESS,
+                description=f"Your URL has been properly crawled!",
+            ),
+        )
     else:
         loop = asyncio.get_event_loop()
         message = loop.run_until_complete(
@@ -144,18 +143,14 @@ def process_crawl_and_notify(
         )
 
     if notification_id:
-        notification_message = {
-            "status": message["type"],
-            "message": message["message"],
-            "name": crawl_website_url,
-        }
         notification_service.update_notification_by_id(
             notification_id,
             NotificationUpdatableProperties(
-                status=NotificationsStatusEnum.Done,
-                message=str(notification_message),
+                status=NotificationsStatusEnum.SUCCESS,
+                description="Your file has been properly uploaded!",
             ),
         )
+
     brain_service.update_brain_last_update_time(brain_id)
     return True
 
@@ -179,6 +174,11 @@ def process_integration_brain_sync_user_brain(brain_id, user_id):
     notion_connector = NotionConnector(brain_id=brain_id, user_id=user_id)
 
     notion_connector.poll()
+
+
+@celery.task
+def ping_telemetry():
+    maybe_send_telemetry("ping", {"ping": "pong"})
 
 
 @celery.task
@@ -212,5 +212,9 @@ celery.conf.beat_schedule = {
     "process_integration_brain_sync": {
         "task": f"{__name__}.process_integration_brain_sync",
         "schedule": crontab(minute="*/5", hour="*"),
+    },
+    "ping_telemetry": {
+        "task": f"{__name__}.ping_telemetry",
+        "schedule": crontab(minute="*/30", hour="*"),
     },
 }
