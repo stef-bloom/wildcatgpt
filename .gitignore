@@ -6,7 +6,6 @@ secondbrain/
 .streamlit/secrets.toml
 **/*.pyc
 toto.txt
-*.ipynb
 log.txt
 
 backend/venv

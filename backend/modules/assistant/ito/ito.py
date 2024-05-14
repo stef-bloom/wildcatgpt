@@ -9,13 +9,13 @@ from typing import List, Optional
 
 from fastapi import UploadFile
 from logger import get_logger
-from modules.user.service.user_usage import UserUsage
 from modules.assistant.dto.inputs import InputAssistant
 from modules.assistant.ito.utils.pdf_generator import PDFGenerator, PDFModel
 from modules.chat.controller.chat.utils import update_user_usage
 from modules.contact_support.controller.settings import ContactsSettings
 from modules.upload.controller.upload_routes import upload_file
 from modules.user.entity.user_identity import UserIdentity
+from modules.user.service.user_usage import UserUsage
 from packages.emails.send_email import send_email
 from pydantic import BaseModel
 from unidecode import unidecode
@@ -89,7 +89,7 @@ class ITO(BaseModel):
             mail_to = self.current_user.email
             body = f"""
             <div style="text-align: center;">
-                <img src="https://wildcatgpt.com/logo.png" alt="WildcatGPT Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
+                <img src="https://quivr-cms.s3.eu-west-3.amazonaws.com/logo_quivr_white_7e3c72620f.png" alt="Quivr Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; display: block;">
                 
                 <p>Quivr's ingestion process has been completed. The processed file is attached.</p>
                 
@@ -111,8 +111,8 @@ class ITO(BaseModel):
             </div>
             """
             params = {
-                "from": mail_from,
-                "to": mail_to,
+                "sender": mail_from,
+                "to": [mail_to],
                 "subject": "Quivr Ingestion Processed",
                 "reply_to": "no-reply@quivr.app",
                 "html": body,

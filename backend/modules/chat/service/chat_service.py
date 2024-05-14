@@ -82,15 +82,25 @@ class ChatService:
             return []
         else:
             enriched_history: List[GetChatHistoryOutput] = []
+            brain_cache = {}
+            prompt_cache = {}
             for message in history:
                 message = ChatHistory(message)
                 brain = None
                 if message.brain_id:
-                    brain = brain_service.get_brain_by_id(message.brain_id)
+                    if message.brain_id in brain_cache:
+                        brain = brain_cache[message.brain_id]
+                    else:
+                        brain = brain_service.get_brain_by_id(message.brain_id)
+                        brain_cache[message.brain_id] = brain
 
                 prompt = None
                 if message.prompt_id:
-                    prompt = prompt_service.get_prompt_by_id(message.prompt_id)
+                    if message.prompt_id in prompt_cache:
+                        prompt = prompt_cache[message.prompt_id]
+                    else:
+                        prompt = prompt_service.get_prompt_by_id(message.prompt_id)
+                        prompt_cache[message.prompt_id] = prompt
 
                 enriched_history.append(
                     GetChatHistoryOutput(
@@ -113,7 +123,7 @@ class ChatService:
         chat_id: UUID,
     ) -> List[ChatItem]:
         chat_history = self.get_chat_history(str(chat_id))
-        chat_notifications = notification_service.get_chat_notifications(chat_id)
+        chat_notifications = []
         return merge_chat_history_and_notifications(chat_history, chat_notifications)
 
     def get_user_chats(self, user_id: str) -> List[Chat]:
