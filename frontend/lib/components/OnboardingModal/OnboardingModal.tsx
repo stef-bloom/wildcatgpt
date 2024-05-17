@@ -46,7 +46,7 @@ export const OnboardingModal = (): JSX.Element => {
     await updateUserIdentity({
       username: methods.getValues("username"),
       company: methods.getValues("companyName"),
-      onboarded: false,
+      onboarded: true,
       company_size: methods.getValues("companySize"),
       usage_purpose: methods.getValues("usagePurpose") as
         | UsagePurpose
@@ -101,7 +101,7 @@ export const OnboardingModal = (): JSX.Element => {
                   <SingleSelector
                     iconName="goal"
                     options={usagePurposeOptions}
-                    placeholder="In what context will you be using Quivr"
+                    placeholder="In what context will you be using WildcatGPT?"
                     selectedOption={
                       field.value
                         ? {
