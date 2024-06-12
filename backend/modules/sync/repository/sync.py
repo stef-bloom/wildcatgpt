@@ -64,7 +64,10 @@ class Sync(SyncInterface):
         """
         logger.info("Retrieving active syncs for user_id: %s", user_id)
         response = (
-            self.db.from_("syncs_active").select("*").eq("user_id", user_id).execute()
+            self.db.from_("syncs_active")
+            .select("*, syncs_user(*)")
+            .eq("user_id", user_id)
+            .execute()
         )
         if response.data:
             logger.info("Active syncs retrieved successfully: %s", response.data)
@@ -90,6 +93,7 @@ class Sync(SyncInterface):
             sync_id,
             sync_active_input,
         )
+
         response = (
             self.db.from_("syncs_active")
             .update(sync_active_input.model_dump(exclude_unset=True))
@@ -182,12 +186,13 @@ class Sync(SyncInterface):
             .lt("last_synced", (current_time - timedelta(minutes=360)).isoformat())
             .execute()
         )
-        if response.data:
-            logger.info("Active syncs retrieved successfully: %s", response.data)
-            for sync in response.data:
-                # Now we can call the sync_google_drive_if_not_synced method to sync the Google Drive files
-                logger.info("Syncing Google Drive for sync_active_id: %s", sync["id"])
 
-            return [SyncsActive(**sync) for sync in response.data]
-        logger.warning("No active syncs found due for synchronization")
+        force_sync = (
+            self.db.table("syncs_active").select("*").eq("force_sync", True).execute()
+        )
+        merge_data = response.data + force_sync.data
+        if merge_data:
+            logger.info("Active syncs retrieved successfully: %s", merge_data)
+            return [SyncsActive(**sync) for sync in merge_data]
+        logger.info("No active syncs found due for synchronization")
         return []
