@@ -1,12 +1,16 @@
 import os
 
+import requests
 from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi.responses import HTMLResponse
 from logger import get_logger
 from middlewares.auth import AuthBearer, get_current_user
 from modules.sync.dto.inputs import SyncsUserInput, SyncUserUpdateInput
 from modules.sync.service.sync_service import SyncService, SyncUserService
 from modules.user.entity.user_identity import UserIdentity
 from msal import PublicClientApplication
+
+from .successfull_connection import successfullConnectionPage
 
 # Initialize logger
 logger = get_logger(__name__)
@@ -30,7 +34,7 @@ SCOPE = [
 ]
 
 
-@azure_sync_router.get(
+@azure_sync_router.post(
     "/sync/azure/authorize",
     dependencies=[Depends(AuthBearer())],
     tags=["Sync"],
@@ -50,7 +54,7 @@ def authorize_azure(
     """
     client = PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
     logger.debug(f"Authorizing Azure sync for user: {current_user.id}")
-    state = f"user_id={current_user.id}"
+    state = f"user_id={current_user.id}, name={name}"
     authorization_url = client.get_authorization_request_url(
         scopes=SCOPE, redirect_uri=REDIRECT_URI, state=state
     )
@@ -79,8 +83,10 @@ def oauth2callback_azure(request: Request):
     """
     client = PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
     state = request.query_params.get("state")
+    state_split = state.split(",")
+    current_user = state_split[0].split("=")[1]  # Extract user_id from state
+    name = state_split[1].split("=")[1] if state else None
     state_dict = {"state": state}
-    current_user = state.split("=")[1]  # Extract user_id from state
     logger.debug(
         f"Handling OAuth2 callback for user: {current_user} with state: {state}"
     )
@@ -101,13 +107,27 @@ def oauth2callback_azure(request: Request):
         logger.error("Failed to acquire token")
         raise HTTPException(status_code=400, detail="Failed to acquire token")
 
+    access_token = result["access_token"]
+
     creds = result
     logger.info(f"Fetched OAuth2 token for user: {current_user}")
 
+    # Fetch user email from Microsoft Graph API
+    graph_url = "https://graph.microsoft.com/v1.0/me"
+    headers = {"Authorization": f"Bearer {access_token}"}
+    response = requests.get(graph_url, headers=headers)
+    if response.status_code != 200:
+        logger.error("Failed to fetch user profile from Microsoft Graph API")
+        raise HTTPException(status_code=400, detail="Failed to fetch user profile")
+
+    user_info = response.json()
+    user_email = user_info.get("mail") or user_info.get("userPrincipalName")
+    logger.info(f"Retrieved email for user: {current_user} - {user_email}")
+
     sync_user_input = SyncUserUpdateInput(
-        credentials=creds,
-        state={},
+        credentials=result, state={}, email=user_email
     )
+
     sync_user_service.update_sync_user(current_user, state_dict, sync_user_input)
     logger.info(f"Azure sync created successfully for user: {current_user}")
-    return {"message": "Azure sync created successfully"}
+    return HTMLResponse(successfullConnectionPage)

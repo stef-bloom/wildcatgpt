@@ -54,8 +54,8 @@ const Search = (): JSX.Element => {
           <MessageInfoBox type="info">
             <div className={styles.message_wrapper}>
               <span>
-                A WildcatGPT Assistant is an AI agent that apply specific processes
-                to an input in order to generate a usable output.
+                A WildcatGPT Assistant is an AI agent that applies specific processes
+                to an input and generates a usable output.
               </span>
               <span>
                 For now, you can try the summary assistant, that summarizes a

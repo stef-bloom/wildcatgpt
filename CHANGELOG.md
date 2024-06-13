@@ -1,5 +1,133 @@
 # Changelog
 
+## 0.0.265 (2024-06-13)
+
+## What's Changed
+* feat: Add timezone conversion for premium user check by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2670
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.264...v0.0.265
+
+## 0.0.264 (2024-06-13)
+
+## What's Changed
+* fix: name passed in sync authorize by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2665
+* feat: Add premium user check in celery task by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2668
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.263...v0.0.264
+
+## 0.0.263 (2024-06-12)
+
+## What's Changed
+* fix: Add error handling for syncing in tasks.py by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2663
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.262...v0.0.263
+
+## 0.0.262 (2024-06-12)
+
+## What's Changed
+* Update README.md by @ferozemohideen in https://github.com/QuivrHQ/quivr/pull/2660
+* feat: Normalize file names in sync module by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2661
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.261...v0.0.262
+
+## 0.0.261 (2024-06-11)
+
+## What's Changed
+* feat: Update Google authorization URL with prompt for consent by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2658
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.260...v0.0.261
+
+## 0.0.260 (2024-06-11)
+
+## What's Changed
+* feat: Add extra_hosts configuration to docker-compose.dev.yml by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2635
+* fix: sync creation fixed by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2637
+* chore: Set default value for "last_synced" column in "syncs_active" table to '2024-06-01 15:30:25+00' by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2638
+* fix: integrations by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2642
+* feat(frontend): sharepoint and gdrive integration  by @Zewed in https://github.com/QuivrHQ/quivr/pull/2643
+* fix(frontend): display bug on add knowledge by @Zewed in https://github.com/QuivrHQ/quivr/pull/2644
+* fix: files_metadata by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2645
+* fix(google): auth is now in state by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2647
+* fix(frontend): add brain modal integration doestn t work by @Zewed in https://github.com/QuivrHQ/quivr/pull/2649
+* fix(frontend): tooltip on folder line by @Zewed in https://github.com/QuivrHQ/quivr/pull/2650
+* feat: telemetry improved by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2651
+* feat: Add force_sync option to SyncsActiveUpdateInput by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2652
+* Update license to include enterprise features by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2653
+* fix(frontend): onboarding bug by @Zewed in https://github.com/QuivrHQ/quivr/pull/2655
+* Update README.md by @ferozemohideen in https://github.com/QuivrHQ/quivr/pull/2656
+
+## New Contributors
+* @ferozemohideen made their first contribution in https://github.com/QuivrHQ/quivr/pull/2656
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.259...v0.0.260
+
+## 0.0.259 (2024-06-04)
+
+## What's Changed
+* feat(upload): async improved by @AmineDiro in https://github.com/QuivrHQ/quivr/pull/2544
+
+## New Contributors
+* @AmineDiro made their first contribution in https://github.com/QuivrHQ/quivr/pull/2544
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.258...v0.0.259
+
+## 0.0.258 (2024-05-29)
+
+## What's Changed
+* feat: Update QuivrRAG and run_evaluation.py files by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2615
+* fix: modify thought prompt by @chloedia in https://github.com/QuivrHQ/quivr/pull/2626
+* feat(llamaparse): Update parsing instructions in common.py by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2627
+* feat(sync): retrieve user email used for the connection by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2628
+* fix: Refactor conversational_qa_chain initialization in KnowledgeBrainQA by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2629
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.257...v0.0.258
+
+## 0.0.257 (2024-05-28)
+
+## What's Changed
+* Add Privacy & Compliance Documentation by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2620
+* docs(security): added compliance by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2621
+* fix(frontend): upgrade button on user page by @Zewed in https://github.com/QuivrHQ/quivr/pull/2623
+* feat(frontend): Add ThoughtsButton component for displaying thoughts by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2624
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.256...v0.0.257
+
+## 0.0.256 (2024-05-26)
+
+## What's Changed
+* feat(rag): follow-up questions and thoughts with spanish fix by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2618
+
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.255...v0.0.256
+
+## 0.0.255 (2024-05-24)
+
+## What's Changed
+* feat: Add Google Drive & Sharepoint sync in backend by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2592
+* Revert "feat: Add Google Drive & Sharepoint sync in backend" by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2603
+* Feat/auth-playground by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2605
+* feat: add init to create packages by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2606
+* Add additional modules to celery.autodiscover_tasks() by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2607
+* Feat/celery import by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2608
+* feat: self-reflect brain by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2610
+* feat: ragas improved testing by @StanGirard in https://github.com/QuivrHQ/quivr/pull/2611
+* fix(frontend): less agressive colors by @Zewed in https://github.com/QuivrHQ/quivr/pull/2612
+* fix(frontend): important buttons by @Zewed in https://github.com/QuivrHQ/quivr/pull/2613
+* fix(frontend): fix white colors by @Zewed in https://github.com/QuivrHQ/quivr/pull/2614
+* fix(frontend): using dark mode in tiptap by @ramonzaca in https://github.com/QuivrHQ/quivr/pull/2616
+
+## New Contributors
+* @ramonzaca made their first contribution in https://github.com/QuivrHQ/quivr/pull/2616
+
+**Full Changelog**: https://github.com/QuivrHQ/quivr/compare/v0.0.254...v0.0.255
+
 ## 0.0.254 (2024-05-21)
 
 ## What's Changed

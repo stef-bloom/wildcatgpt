@@ -31,12 +31,12 @@ class SyncUserService:
     def create_sync_user(self, sync_user_input: SyncsUserInput):
         return self.repository.create_sync_user(sync_user_input)
 
-    def delete_sync_user(self, provider: str, user_id: str):
-        return self.repository.delete_sync_user(provider, user_id)
+    def delete_sync_user(self, sync_id: str, user_id: str):
+        return self.repository.delete_sync_user(sync_id, user_id)
 
     def get_sync_user_by_state(self, state: dict):
         return self.repository.get_sync_user_by_state(state)
-    
+
     def get_sync_user_by_id(self, sync_id: int):
         return self.repository.get_sync_user_by_id(sync_id)
 
@@ -46,10 +46,14 @@ class SyncUserService:
         return self.repository.update_sync_user(sync_user_id, state, sync_user_input)
 
     def get_files_folder_user_sync(
-        self, sync_active_id: int, user_id: str, folder_id: str = None
+        self,
+        sync_active_id: int,
+        user_id: str,
+        folder_id: str = None,
+        recursive: bool = False,
     ):
         return self.repository.get_files_folder_user_sync(
-            sync_active_id, user_id, folder_id
+            sync_active_id, user_id, folder_id, recursive
         )
 
 
