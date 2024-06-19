@@ -1,8 +1,8 @@
-@use "@/styles/BoxShadow.module.scss";
-@use "@/styles/Radius.module.scss";
-@use "@/styles/ScreenSizes.module.scss";
-@use "@/styles/Spacings.module.scss";
-@use "@/styles/ZIndexes.module.scss";
+@use "styles/BoxShadow.module.scss";
+@use "styles/Radius.module.scss";
+@use "styles/ScreenSizes.module.scss";
+@use "styles/Spacings.module.scss";
+@use "styles/ZIndexes.module.scss";
 
 .modal_container {
   display: flex;
@@ -25,6 +25,7 @@
     max-width: 90vw;
     width: 35vw;
     height: 80vh;
+    overflow: auto;
 
     &.auto {
       height: auto;
