@@ -1,56 +1,6 @@
 version: "3.8"
 
 services:
-
-  traefik:
-    image: traefik:v2.4
-    container_name: traefik
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedByDefault=false"
-      - "--entryPoints.web.address=:80"
-      - "--entryPoints.websecure.address=:443"
-      - "--certificatesResolvers.letsencrypt.acme.email=cale@modtechgroup.com"
-      - "--certificatesResolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
-      - "--certificatesResolvers.letsencrypt.acme.tlsChallenge=true"
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8080:8080" # Traefik Dashboard (optional, but useful for debugging)
-    networks:
-      - default
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/letsencrypt:/letsencrypt"
-    restart: always
-
-  frontend:
-    image: quivr-frontend-prebuilt
-    pull_policy: never
-    build:
-      context: frontend
-      dockerfile: Dockerfile
-      args:
-        - NEXT_PUBLIC_ENV=local
-        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
-        - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
-        - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
-        - NEXT_PUBLIC_CMS_URL=${NEXT_PUBLIC_CMS_URL}
-        - NEXT_PUBLIC_FRONTEND_URL=${NEXT_PUBLIC_FRONTEND_URL}
-    container_name: web
-    depends_on:
-      - backend-core
-    restart: always
-    networks:
-      - default
-
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`dev.wildcatgpt.com`)"
-      - "traefik.http.routers.frontend.entrypoints=websecure"
-      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
-
   backend-core:
     image: stangirard/quivr-backend-prebuilt:latest
     pull_policy: if_not_present
@@ -138,6 +88,55 @@ services:
       - beat
     networks:
       - default
+
+  frontend:
+    image: quivr-frontend-prebuilt
+    pull_policy: never
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_ENV=local
+        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+        - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+        - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+        - NEXT_PUBLIC_CMS_URL=${NEXT_PUBLIC_CMS_URL}
+        - NEXT_PUBLIC_FRONTEND_URL=${NEXT_PUBLIC_FRONTEND_URL}
+    container_name: web
+    depends_on:
+      - backend-core
+    restart: always
+    networks:
+      - default
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`dev.wildcatgpt.com`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+
+  traefik:
+    image: traefik:v2.4
+    container_name: traefik
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedByDefault=false"
+      - "--entryPoints.web.address=:80"
+      - "--entryPoints.websecure.address=:443"
+      - "--certificatesResolvers.letsencrypt.acme.email=cale@modtechgroup.com"
+      - "--certificatesResolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesResolvers.letsencrypt.acme.tlsChallenge=true"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080" # Traefik Dashboard (optional, but useful for debugging)
+    networks:
+      - default
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/letsencrypt:/letsencrypt"
+    restart: always
 
 networks:
   default:
