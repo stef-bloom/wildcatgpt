@@ -64,7 +64,7 @@ services:
       - .env
     build:
       context: backend
-      dockerfile: Dockerfile.local
+      dockerfile: Dockerfile
     container_name: worker
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -80,7 +80,7 @@ services:
       - .env
     build:
       context: backend
-      dockerfile: Dockerfile.local
+      dockerfile: Dockerfile
     container_name: beat
     extra_hosts:
       - "host.docker.internal:host-gateway"
