@@ -58,7 +58,7 @@
     "searchBrain": "Search for a brain",
     "secrets_update_error": "Error while updating secrets",
     "secrets_updated": "Secrets updated",
-    "set_brain_status_to_private_modal_description": "Every WildcatGPT users won't be able to use this brain anymore and they won't see it in the brain library.",
+    "set_brain_status_to_private_modal_description": "Other WildcatGPT user won't be able to use this brain anymore and they won't see it in the brain library.",
     "set_brain_status_to_private_modal_title": "Are you sure you want to set this as <span class='text-primary'>Private</span>?<br/><br/>",
     "set_brain_status_to_public_modal_description": "Every WildcatGPT user will be able to:<br/>- Subscribe to your brain in the 'brains library'.<br/>- Use this brain and check the prompt and model configurations.<br/><br/>They won't have access to your uploaded files and people section.",
     "set_brain_status_to_public_modal_title": "Are you sure you want to set this as <span class='text-primary'>Public</span>?<br/><br/>",
